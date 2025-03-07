@@ -1,0 +1,322 @@
+/* Dashboard.css */
+
+/* Base Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Container Grid Layout */
+  .dashboard-container {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    min-height: 100vh;
+    transition: background 0.5s ease;
+  }
+  
+  /* Dark Mode */
+  .dark-mode {
+    background-color: #1f2937;
+    color: #f3f4f6;
+  }
+  
+  /* Sidebar Styles */
+  .sidebar {
+    background: linear-gradient(135deg, #fe4f4f, #fe4c00);
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    transition: width 0.3s ease, background 0.5s ease;
+  }
+  
+  .sidebar.collapsed {
+    width: 70px;
+  }
+  
+  .collapse-btn {
+    background: none;
+    border: none;
+    color: inherit;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  .collapse-btn:hover {
+    color: #6200ff;
+  }
+  
+  .sidebar-title {
+    font-size: 1.75rem;
+    margin-bottom: 30px;
+    transition: opacity 0.3s ease;
+  }
+  
+  .nav-list {
+    list-style: none;
+    padding: 0;
+    flex-grow: 1;
+  }
+  
+  .nav-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .nav-item:hover {
+    color: #2600ff;
+    transform: scale(1.05);
+  }
+  
+  .signout-btn {
+    background: linear-gradient(135deg, #f43f5e, #e11d48);
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s ease, transform 0.3s ease;
+  }
+  
+  .signout-btn:hover {
+    background: linear-gradient(135deg, #e11d48, #f43f5e);
+    transform: scale(1.05);
+  }
+  
+  /* Main Section */
+  .main-section {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  /* Topbar Styles */
+  .topbar {
+    background: linear-gradient(135deg, #e1a3a3, #586181);
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    transition: background 0.5s ease;
+  }
+  
+  .topbar .welcome h2 {
+    font-size: 1.5rem;
+  }
+  
+  .topbar-actions {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+  }
+  
+  .search-box {
+    position: relative;
+    width: 250px;
+  }
+  
+  .search-box input {
+    width: 100%;
+    padding: 8px 35px 8px 10px;
+    border: 1px solid #d1d5db;
+    border-radius: 5px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .search-box input:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 5px rgba(59, 130, 246, 0.5);
+  }
+  
+  .search-box .search-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #6b7280;
+  }
+  
+  .mode-btn, .notification-btn {
+    background: linear-gradient(135deg, #3b82f6, #06b6d4);
+    border: none;
+    padding: 8px;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+  }
+  
+  .mode-btn:hover, .notification-btn:hover {
+    transform: scale(1.05);
+  }
+  
+  .user-icon {
+    font-size: 2rem;
+    cursor: pointer;
+  }
+  
+  /* Main Content Styles */
+  .main-content {
+    padding: 20px;
+    background-color: #f3f4f6;
+    flex-grow: 1;
+    transition: background 0.5s ease;
+  }
+  
+  /* Grid for Projects & Tasks */
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  
+  /* Section Styles */
+  .projects-section, .tasks-section {
+    background: linear-gradient(135deg, #ffffff, #e5e7eb);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .projects-section:hover, .tasks-section:hover {
+    transform: translateY(-5px);
+  }
+  
+  .section-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+  }
+  
+  /* Projects List */
+  .project-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 15px;
+  }
+  
+  .project-item {
+    background: linear-gradient(135deg, #d1d5db, #9ca3af);
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    transition: background 0.3s ease;
+  }
+  
+  .project-item:hover {
+    background: linear-gradient(135deg, #9ca3af, #6b7280);
+  }
+  
+  .project-actions button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: 5px;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+  }
+  
+  .project-actions button:hover {
+    color: #ffd700;
+  }
+  
+  /* Add Project & Task */
+  .project-add, .task-add {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .project-add input, .task-add input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #060e2c;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+  }
+  
+  .project-add input:focus, .task-add input:focus {
+    border-color: #f63b8c;
+  }
+  
+  .add-btn {
+    background: linear-gradient(135deg, #3b82f6, #06b6d4);
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+  }
+  
+  .add-btn:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Tasks List */
+  .task-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  /* Task Item (drag and drop) */
+  .task-item {
+    background: linear-gradient(135deg, #e5e7eb, #f9fafb);
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.3s ease;
+  }
+  
+  .task-item:hover {
+    background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
+  }
+  
+  .task-actions button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: 5px;
+    transition: color 0.3s ease;
+  }
+  
+  .task-actions button:hover {
+    color: #ffd700;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .dashboard-container {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto auto;
+    }
+    
+    .sidebar {
+      width: 100%;
+    }
+    
+    .main-section {
+      width: 100%;
+    }
+    
+    .topbar {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+  
